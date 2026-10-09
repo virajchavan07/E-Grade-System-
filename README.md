@@ -1,13 +1,12 @@
-# E-Grade-System-https://
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Grade System</title>
-    <!-- Tailwind CSS (Styling के लिए) -->
+    <!-- Tailwind CSS for UI Layout & Styling -->
     <script src="https://tailwindcss.com"></script>
-    <!-- Lucide Icons (Icons के लिए) -->
+    <!-- Lucide Icons Framework -->
     <script src="https://unpkg.com"></script>
     <style>
         .custom-green-dark { color: #123524; }
@@ -17,7 +16,7 @@
 </head>
 <body class="bg-gray-50 font-sans antialiased">
 
-    <!-- 1. LOGIN PAGE (लॉगिन पेज) -->
+    <!-- 1. LOGIN INTERFACE PANEL -->
     <div id="login-page" class="min-h-screen flex items-center justify-center custom-green-light p-4">
         <div class="bg-white rounded-2xl shadow-xl p-8 max-w-sm w-full border border-gray-100">
             <div class="flex items-center gap-2 mb-8">
@@ -50,10 +49,10 @@
         </div>
     </div>
 
-    <!-- 2. DASHBOARD (डैशबोर्ड - लॉगिन के बाद दिखेगा) -->
+    <!-- 2. CORE DASHBOARD WRAPPER -->
     <div id="app-dashboard" class="hidden min-h-screen flex flex-col md:flex-row">
         
-        <!-- SIDEBAR (साइडबार) -->
+        <!-- SIDE NAVIGATION MENU -->
         <aside class="w-full md:w-64 custom-green-bg text-white flex flex-col justify-between p-4 shrink-0">
             <div>
                 <div class="flex items-center gap-2 mb-8 px-2 py-3 border-b border-emerald-950">
@@ -75,7 +74,7 @@
             </button>
         </aside>
 
-        <!-- MAIN CONTENT (मुख्य सामग्री) -->
+        <!-- DASHBOARD BODY CONTENT -->
         <main class="flex-1 p-4 md:p-8 overflow-y-auto">
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
                 <div>
@@ -87,7 +86,7 @@
                 </button>
             </div>
 
-            <!-- STATS CARDS (आंकड़े) -->
+            <!-- ANALYTICS HIGHLIGHT METRICS -->
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                 <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
                     <span class="text-xs font-semibold text-gray-400 uppercase block mb-1">Total Students</span>
@@ -107,7 +106,7 @@
                 </div>
             </div>
 
-            <!-- TABLE (टेबल) -->
+            <!-- ACADEMIC LOG DATA TABLE -->
             <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse text-sm">
@@ -121,7 +120,7 @@
                             </tr>
                         </thead>
                         <tbody id="student-table-body" class="divide-y divide-gray-100 text-gray-700">
-                            <!-- डेटा यहाँ लोड होगा -->
+                            <!-- Injected dynamically via script -->
                         </tbody>
                     </table>
                 </div>
@@ -129,7 +128,7 @@
         </main>
     </div>
 
-    <!-- 3. MODAL WINDOW (नया रिकॉर्ड जोड़ने के लिए पॉपअप) -->
+    <!-- 3. MODAL NEW RECORD ACTION WINDOW -->
     <div id="record-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
         <div class="bg-white rounded-2xl w-full max-w-md shadow-2xl overflow-hidden border border-gray-100">
             <div class="p-5 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
@@ -144,7 +143,7 @@
             <form id="record-form" onsubmit="handleRecordSubmit(event)" class="p-5 space-y-4">
                 <div>
                     <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">Student Full Name</label>
-                    <input type="text" id="input-name" required placeholder="जैसे: Rahul Kumar" class="w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-700 text-sm">
+                    <input type="text" id="input-name" required placeholder="e.g. Rahul Kumar" class="w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-700 text-sm">
                 </div>
                 <div>
                     <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">Subject</label>
@@ -157,10 +156,10 @@
                 </div>
                 <div>
                     <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">Score (0-100)</label>
-                    <input type="number" id="input-score" required min="0" max="100" placeholder="जैसे: 85" class="w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-700 text-sm">
+                    <input type="number" id="input-score" required min="0" max="100" placeholder="e.g. 85" class="w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-700 text-sm">
                 </div>
 
                 <div class="flex gap-3 pt-3">
                     <button type="button" onclick="closeModal()" class="flex-1 py-2.5 border border-gray-300 text-gray-700 text-sm font-medium rounded-xl hover:bg-gray-50">
                         Cancel
-l
+                        
